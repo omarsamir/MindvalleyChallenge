@@ -21,6 +21,8 @@
 		741019CB214BDBB20004FDAB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741019CA214BDBB20004FDAB /* User.swift */; };
 		741019CD214BDC180004FDAB /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741019CC214BDC180004FDAB /* ProfileImage.swift */; };
 		741019CF214BE20A0004FDAB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741019CE214BE20A0004FDAB /* Category.swift */; };
+		741019D9214BEA240004FDAB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741019D8214BEA240004FDAB /* Constants.swift */; };
+		741019DB214BED560004FDAB /* ResourceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741019DA214BED560004FDAB /* ResourceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		741019CA214BDBB20004FDAB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		741019CC214BDC180004FDAB /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		741019CE214BE20A0004FDAB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		741019D8214BEA240004FDAB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		741019DA214BED560004FDAB /* ResourceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceController.swift; sourceTree = "<group>"; };
 		7E60123E602F9674C8F19497 /* Pods_MindvalleyChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindvalleyChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93D228A363A989B60B8132D /* Pods_MindvalleyChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindvalleyChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F3B1C52229A4F8F40F2BCA /* Pods-MindvalleyChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindvalleyChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MindvalleyChallenge/Pods-MindvalleyChallenge.debug.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 				741019A8214BD44A0004FDAB /* Assets.xcassets */,
 				741019AA214BD44A0004FDAB /* LaunchScreen.storyboard */,
 				741019AD214BD44A0004FDAB /* Info.plist */,
+				741019D8214BEA240004FDAB /* Constants.swift */,
 			);
 			path = MindvalleyChallenge;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 		741019C2214BD8A10004FDAB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				741019DA214BED560004FDAB /* ResourceController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,7 +344,9 @@
 				741019A4214BD4490004FDAB /* ViewController.swift in Sources */,
 				741019A2214BD4490004FDAB /* AppDelegate.swift in Sources */,
 				741019C7214BDA810004FDAB /* Links.swift in Sources */,
+				741019DB214BED560004FDAB /* ResourceController.swift in Sources */,
 				741019CF214BE20A0004FDAB /* Category.swift in Sources */,
+				741019D9214BEA240004FDAB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

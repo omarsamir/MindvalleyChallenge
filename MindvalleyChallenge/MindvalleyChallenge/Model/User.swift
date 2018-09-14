@@ -7,11 +7,24 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class User: NSObject {
+class User: NSObject, Mappable {
     var id: String!
     var username: String!
     var name: String!
     var links: Links!
     var profile_image: ProfileImage!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        id             <- map["id"]
+        username       <- map["username"]
+        name           <- map["name"]
+        links          <- map["id"]
+        profile_image  <- map["profile_image"]
+    }
 }

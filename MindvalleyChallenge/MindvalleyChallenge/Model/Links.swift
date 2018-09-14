@@ -7,10 +7,23 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class Links: NSObject {
+class Links: NSObject,Mappable {
      var linksSelf: String!
      var html: String!
      var photos: String!
      var likes: String!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        linksSelf  <- map["linksSelf"]
+        html       <- map["html"]
+        photos     <- map["photos"]
+        likes      <- map["likes"]
+    }
+    
 }

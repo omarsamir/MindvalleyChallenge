@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import ObjectMapper
 
-class ProfileImage: NSObject {
+class ProfileImage: NSObject,Mappable {
      var small: String!
      var medium: String!
      var large: String!
+    
+    required init?(map: Map) {
+        
+    }
+    
+    func mapping(map: Map) {
+        small  <- map["small"]
+        medium <- map["medium"]
+        large  <- map["large"]
+    }
 }
