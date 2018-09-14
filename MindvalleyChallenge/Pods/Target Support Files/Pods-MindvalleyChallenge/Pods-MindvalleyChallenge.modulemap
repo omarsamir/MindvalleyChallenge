@@ -1,0 +1,6 @@
+framework module Pods_MindvalleyChallenge {
+  umbrella header "Pods-MindvalleyChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
