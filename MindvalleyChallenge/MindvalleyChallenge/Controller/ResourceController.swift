@@ -31,10 +31,15 @@ class ResourceController: NSObject {
                     let theJSONText = String(data: theJSONData,
                                              encoding: .ascii)
                     let resources : [Resource] = [Resource](JSONString: theJSONText!)!
-                    self.delegate?.display(resources: resources)
+                    DispatchQueue.main.async {
+                        self.delegate?.display(resources: resources)
+                    }
+                    
                 }
             } catch let error as NSError {
-                self.delegate?.display(error: error)
+                DispatchQueue.main.async {
+                    self.delegate?.display(error: error)
+                }
             }
         }
         dataTask.resume()

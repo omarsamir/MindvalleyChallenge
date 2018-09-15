@@ -11,5 +11,8 @@ import UIKit
 class Constants : NSObject {
     static let RESOURCES_URL = "https://pastebin.com/raw/wgkJgazE"
     static let HTTPREQUEST_TYPE_GET = "GET"
+    static let GREY_PLACEHOLDER_IMAGE_NAME = "gray-placeholder"
+    static let LIKE_IMAGE_NAME = "like"
+    static let DISLIKE_IMAGE_NAME = "dislike"
 }
 

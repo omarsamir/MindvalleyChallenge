@@ -7,6 +7,7 @@ target 'MindvalleyChallenge' do
 
   # Pods for MindvalleyChallenge
 	pod 'ObjectMapper'
+    pod 'SDWebImage'
 
   target 'MindvalleyChallengeTests' do
     inherit! :search_paths

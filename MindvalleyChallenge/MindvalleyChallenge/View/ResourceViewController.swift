@@ -41,12 +41,7 @@ class ResourceViewController: UIViewController,UITableViewDelegate,UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : ResourceTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ResourceTableViewCellId", for: indexPath) as! ResourceTableViewCell
         let resource = resources[indexPath.row]
-        
-//        cell.backgroundColor = UIColor(rgb:);
-        cell.usernameLabel.text = resource.user.username
-        cell.userFullName.text = resource.user.name
-        cell.createdAtLabel.text = resource.created_at
-        cell.numberOfLikesLabel.text = String(resource.likes)
+        cell.set(resource: resource)
         return cell
     }
     

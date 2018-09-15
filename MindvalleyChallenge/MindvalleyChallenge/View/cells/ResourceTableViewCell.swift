@@ -29,4 +29,30 @@ class ResourceTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func set(resource: Resource){
+        usernameLabel.text = resource.user.username
+        userFullName.text = resource.user.name
+        createdAtLabel.text = resource.created_at
+        numberOfLikesLabel.text = String(resource.likes)
+        resourceProfileImageView.sd_setImage(with: URL(string: resource.urls.regular), placeholderImage: UIImage(named: Constants.GREY_PLACEHOLDER_IMAGE_NAME), options: .refreshCached, completed: nil)
+        userProfileImageView.sd_setImage(with: URL(string: resource.user.profile_image.large), placeholderImage: UIImage(named: Constants.GREY_PLACEHOLDER_IMAGE_NAME), options: .refreshCached, completed: nil)
+        
+        if resource.liked_by_user {
+            isLikeImageView.image = UIImage(named: Constants.LIKE_IMAGE_NAME)
+        }else{
+            isLikeImageView.image = UIImage(named: Constants.DISLIKE_IMAGE_NAME)
+        }
+        
+        var categoriesString : String = ""
+        for category in resource.categories {
+            categoriesString.append(" #"+category.title)
+            
+            if category.id != resource.categories.last?.id {
+                    categoriesString.append(", ")
+            }
+            
+        }
+        categoriesLabel.text = categoriesString
+    }
+    
 }
