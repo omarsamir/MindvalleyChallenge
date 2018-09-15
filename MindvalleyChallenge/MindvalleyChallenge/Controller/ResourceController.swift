@@ -8,10 +8,16 @@
 
 import UIKit
 import ObjectMapper
-
+protocol ResourceControllerDelegate : AnyObject {
+    func display(resources:[Resource])
+    func display(error: Error)
+}
 class ResourceController: NSObject {
 
-    static func getResources(completion: @escaping (_ result: [Resource]?, _ error: NSError?) -> Void) {
+    weak var delegate : ResourceControllerDelegate?
+    
+    
+    func getResources(){
         let url = URL(string: Constants.RESOURCES_URL)
         var request : URLRequest = URLRequest(url: url!)
         request.httpMethod = Constants.HTTPREQUEST_TYPE_GET
@@ -25,10 +31,10 @@ class ResourceController: NSObject {
                     let theJSONText = String(data: theJSONData,
                                              encoding: .ascii)
                     let resources : [Resource] = [Resource](JSONString: theJSONText!)!
-                    completion(resources,nil)
+                    self.delegate?.display(resources: resources)
                 }
             } catch let error as NSError {
-                completion(nil,error)
+                self.delegate?.display(error: error)
             }
         }
         dataTask.resume()
