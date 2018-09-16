@@ -13,7 +13,8 @@ class ResourceViewController: UIViewController,UITableViewDelegate,UITableViewDa
     @IBOutlet weak var resourcesTableView: UITableView!
     var resources : [Resource]!
     var resourceController : ResourceController!
-    
+    var refreshControl = UIRefreshControl()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         resourceController = ResourceController()
@@ -24,6 +25,11 @@ class ResourceViewController: UIViewController,UITableViewDelegate,UITableViewDa
         resourcesTableView.register(UINib(nibName: String(describing: ResourceTableViewCell.self), bundle: nil), forCellReuseIdentifier: "ResourceTableViewCellId")
         
         resources = [Resource]()
+        
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        resourcesTableView.addSubview(refreshControl) // not required when using UITableViewController
         // Do any additional setup after loading the view.
     }
 
@@ -36,6 +42,9 @@ class ResourceViewController: UIViewController,UITableViewDelegate,UITableViewDa
         resourceController.getResources()
     }
     
+    @objc func refresh() {
+         resourceController.getResources()
+    }
     // #MARK: Resource table view delegate methods implementation
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,6 +66,7 @@ class ResourceViewController: UIViewController,UITableViewDelegate,UITableViewDa
     
     func display(resources: [Resource]) {
         self.resources = resources
+        refreshControl.endRefreshing()
         resourcesTableView.reloadData()
     }
     
